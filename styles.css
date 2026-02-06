@@ -1,0 +1,50 @@
+body {
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.calculator {
+    display: flex ;
+    flex-direction: column;
+    max-width: 400px ;
+}
+
+h1 {
+    color:rgb(76, 89, 209);
+}
+
+.screen {
+    width: 100% ;
+    aspect-ratio: 4/1;
+    border-radius: 10px;
+    border-color: rgb(76, 89, 209);
+    border-style: solid;
+    margin:5px ;
+    box-sizing: border-box;
+}
+
+.buttons {
+    width: 100% ;
+    margin: 5px;
+}
+
+div.buttons div {
+    width: 100% ;
+    display: flex ;
+    flex-direction:row;
+    justify-content: space-between ;
+}
+
+button {
+    margin: 4px ;
+    width:95px;
+    aspect-ratio: 1/1;
+    display: block;
+    box-sizing: border-box;
+    color: rgb(76, 89, 209);
+    font-size: 30px;
+    font-weight: 900;
+}
