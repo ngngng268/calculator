@@ -29,7 +29,7 @@ h1 {
     display:flex ;
     justify-content: end;
     align-items: end;
-    font-weight: 900;
+    font-weight: 900px;
 }
 
 .buttons {
