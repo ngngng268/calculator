@@ -24,6 +24,12 @@ h1 {
     border-style: solid;
     margin:5px ;
     box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    display:flex ;
+    justify-content: end;
+    align-items: end;
+    font-weight: 900;
 }
 
 .buttons {
