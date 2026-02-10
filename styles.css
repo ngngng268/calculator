@@ -24,7 +24,7 @@ h1 {
     border-style: solid;
     margin:5px ;
     box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
     font-size: 50px;
     display:flex ;
     justify-content: end;
@@ -47,10 +47,13 @@ div.buttons div {
 button {
     margin: 4px ;
     width:95px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/3;
     display: block;
     box-sizing: border-box;
     color: rgb(76, 89, 209);
     font-size: 30px;
     font-weight: 900;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: rgb(52, 63, 185);
 }
