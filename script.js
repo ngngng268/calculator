@@ -1,18 +1,31 @@
-/*function add (ans, num) {
-if num === undefined => num=0}
-    
-function subtract
-function multiply
-function divide 
+let ans=0;
+let operator=undefined ;
+let num = [] ;
+let calc = "over" ;
 
-function operate
-    if num = undefined operator = undefined then ans = ans 
-    else:
-        pick operator
-        ans = ?
-        num=undefined
-        return ans
-    
-function display to display what on screen: delete screen then print new value
+const screen = document.querySelector(".screen")
+function display (a) {
+    screen.textContent = a ;
+};
 
-function reset: ans = 0; num=undefined ; operator = undefined*/
+function reset() {
+    ans = 0 ;
+    operator = undefined ;
+    num = [] ;
+    calc = "over" ;
+    display(ans) ;
+};
+
+reset () ;
+
+function add (a, b) {
+    if (b === undefined) {
+        b = 0 ;
+    };
+    ans = a + b ;
+    num = undefined ;
+    return (ans) ;
+};
+
+
+
