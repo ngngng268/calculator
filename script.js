@@ -27,5 +27,32 @@ function add (a, b) {
     return (ans) ;
 };
 
+function subtract (a, b) {
+    if (b === undefined) {
+        b = 0
+    };
+    ans = a - b ;
+    num = undefined;
+    return (ans) ;
+};
 
+function multiply (a, b) {
+    if (b === undefined) {
+        b = 1
+    };
+    ans = a * b ;
+    num = undefined;
+    return (ans) ;
+};
 
+function divide (a, b) {
+    if (b === 0) {
+        return ("You cannot divide by 0.")
+    }
+    else { if (b === undefined) {
+        b = 1
+    };
+    ans = a / b ;
+    num = undefined;
+    return (ans) ;}
+};
