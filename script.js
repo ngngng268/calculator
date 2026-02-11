@@ -1,5 +1,6 @@
-let ans=0;
-let operator=undefined ;
+let ans=0 ;
+let ansInput = [0, 0] ;
+let operator = "" ;
 let num = [] ;
 let calc = "over" ;
 
@@ -9,8 +10,9 @@ function display (a) {
 };
 
 function reset() {
-    ans = 0 ;
-    operator = undefined ;
+    ans = 0 ; 
+    ansInput = [0, 0] ;
+    operator = "" ;
     num = [] ;
     calc = "over" ;
     display(ans) ;
@@ -19,29 +21,26 @@ function reset() {
 reset () ;
 
 function add (a, b) {
-    if (b === undefined) {
+    if (b === NaN) {
         b = 0 ;
     };
     ans = a + b ;
-    num = undefined ;
     return (ans) ;
 };
 
 function subtract (a, b) {
-    if (b === undefined) {
+    if (b === NaN) {
         b = 0
     };
     ans = a - b ;
-    num = undefined;
     return (ans) ;
 };
 
 function multiply (a, b) {
-    if (b === undefined) {
+    if (b === NaN) {
         b = 1
     };
     ans = a * b ;
-    num = undefined;
     return (ans) ;
 };
 
@@ -49,10 +48,35 @@ function divide (a, b) {
     if (b === 0) {
         return ("You cannot divide by 0.")
     }
-    else { if (b === undefined) {
-        b = 1
+    else { 
+        if (b === NaN) {
+            b = 1
+        };
+        ans = a / b ;
+        return (ans) ;
     };
-    ans = a / b ;
-    num = undefined;
-    return (ans) ;}
+};
+
+function operate () {
+    num = parseFloat(num.join("")) ;
+    if ((num === NaN) || (operator === "")) {
+        ans = ans ;
+    } else {
+        ans = parseFloat(ansInput.join("")) ;
+        if (operator = "plus") {
+            ans = add(ans, num);
+        } else if (operator = "minus") {
+            ans = subtract(ans, num);
+        } else if (operator = "multiply") {
+            ans = multiply(ans, num);
+        } else if (operator = "divide") {
+            ans = divide(ans, num);
+        } ;
+    } ;
+    display (ans) ;
+    num = [] ;
+    operator = "" ;
+    ansInput = [0, 0] ;
+    calc = "over" ;
+    return (ans) ;
 };
