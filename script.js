@@ -94,4 +94,17 @@ nine.addEventListener("click", function(){
         display(parseFloat(num.join(""))) ;
     }
 });
-console.log(ansInput) ;
+
+const eight = document.querySelector(".eight") ;
+eight.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("8") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("8") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
