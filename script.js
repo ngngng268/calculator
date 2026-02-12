@@ -80,3 +80,18 @@ function operate () {
     calc = "over" ;
     return (ans) ;
 };
+
+const nine = document.querySelector(".nine") ;
+nine.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("9") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("9") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+console.log(ansInput) ;
