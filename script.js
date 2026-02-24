@@ -6,7 +6,9 @@ let calc = "over" ;
 
 const screen = document.querySelector(".screen")
 function display (a) {
-    screen.textContent = a ;
+    screen.textContent = (
+        new Intl.NumberFormat("en-EN").format(a)
+    ) ;
 };
 
 function reset() {
@@ -81,8 +83,7 @@ function operate () {
     return (ans) ;
 };
 
-const nine = document.querySelector(".nine") ;
-nine.addEventListener("click", function(){
+function inputNine () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -93,10 +94,11 @@ nine.addEventListener("click", function(){
         num.push("9") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const nine = document.querySelector(".nine") ;
+nine.addEventListener("click", inputNine);
 
-const eight = document.querySelector(".eight") ;
-eight.addEventListener("click", function(){
+function inputEight () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -107,10 +109,11 @@ eight.addEventListener("click", function(){
         num.push("8") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const eight = document.querySelector(".eight") ;
+eight.addEventListener("click", inputEight);
 
-const seven = document.querySelector(".seven") ;
-seven.addEventListener("click", function(){
+function inputSeven () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -121,10 +124,11 @@ seven.addEventListener("click", function(){
         num.push("7") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const seven = document.querySelector(".seven") ;
+seven.addEventListener("click", inputSeven);
 
-const six = document.querySelector(".six") ;
-six.addEventListener("click", function(){
+function inputSix () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -135,10 +139,11 @@ six.addEventListener("click", function(){
         num.push("6") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const six = document.querySelector(".six") ;
+six.addEventListener("click", inputSix);
 
-const five = document.querySelector(".five") ;
-five.addEventListener("click", function(){
+function inputFive () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -149,10 +154,11 @@ five.addEventListener("click", function(){
         num.push("5") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const five = document.querySelector(".five") ;
+five.addEventListener("click", inputFive);
 
-const four = document.querySelector(".four") ;
-four.addEventListener("click", function(){
+function inputFour () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -163,10 +169,11 @@ four.addEventListener("click", function(){
         num.push("4") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const four = document.querySelector(".four") ;
+four.addEventListener("click", inputFour);
 
-const three = document.querySelector(".three") ;
-three.addEventListener("click", function(){
+function inputThree () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -177,10 +184,11 @@ three.addEventListener("click", function(){
         num.push("3") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const three = document.querySelector(".three") ;
+three.addEventListener("click", inputThree);
 
-const two = document.querySelector(".two") ;
-two.addEventListener("click", function(){
+function inputTwo () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -191,10 +199,11 @@ two.addEventListener("click", function(){
         num.push("2") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const two = document.querySelector(".two") ;
+two.addEventListener("click", inputTwo);
 
-const one = document.querySelector(".one") ;
-one.addEventListener("click", function(){
+function inputOne () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -205,10 +214,11 @@ one.addEventListener("click", function(){
         num.push("1") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const one = document.querySelector(".one") ;
+one.addEventListener("click", inputOne);
 
-const zero = document.querySelector(".zero") ;
-zero.addEventListener("click", function(){
+function inputZero () {
     if (calc = "over") {
         calc = "ongoing" ;
     };
@@ -219,4 +229,6 @@ zero.addEventListener("click", function(){
         num.push("0") ;
         display(parseFloat(num.join(""))) ;
     }
-});
+};
+const zero = document.querySelector(".zero") ;
+zero.addEventListener("click", inputZero);
