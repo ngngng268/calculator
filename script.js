@@ -238,3 +238,7 @@ const minusBtn = document.querySelector("minus") ;
 const multiplyBtn = document.querySelector("multiply") ;
 const divideBtn = document.querySelector("divide") ;
 const operatorArr = [plusBtn, minusBtn, multiplyBtn, divideBtn] ;
+
+//function pressedBtn to make a Btn appear pressed
+
+//function unpressedBtn to make a Btn appear unpressed
