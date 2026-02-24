@@ -232,3 +232,9 @@ function inputZero () {
 };
 const zero = document.querySelector(".zero") ;
 zero.addEventListener("click", inputZero);
+
+const plusBtn = document.querySelector("plus") ;
+const minusBtn = document.querySelector("minus") ;
+const multiplyBtn = document.querySelector("multiply") ;
+const divideBtn = document.querySelector("divide") ;
+const operatorArr = [plusBtn, minusBtn, multiplyBtn, divideBtn] ;
