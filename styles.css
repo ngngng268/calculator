@@ -35,6 +35,8 @@ h1 {
     justify-content: end;
     align-items: end;
     font-weight: 900px;
+    text-wrap: wrap;
+    overflow: hidden;
 }
 
 .buttons {
