@@ -136,3 +136,87 @@ six.addEventListener("click", function(){
         display(parseFloat(num.join(""))) ;
     }
 });
+
+const five = document.querySelector(".five") ;
+five.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("5") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("5") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+
+const four = document.querySelector(".four") ;
+four.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("4") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("4") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+
+const three = document.querySelector(".three") ;
+three.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("3") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("3") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+
+const two = document.querySelector(".two") ;
+two.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("2") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("2") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+
+const one = document.querySelector(".one") ;
+one.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("1") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("1") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+
+const zero = document.querySelector(".zero") ;
+zero.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("0") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("0") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
