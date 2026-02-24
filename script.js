@@ -108,3 +108,17 @@ eight.addEventListener("click", function(){
         display(parseFloat(num.join(""))) ;
     }
 });
+
+const seven = document.querySelector(".seven") ;
+seven.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("7") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("8") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
