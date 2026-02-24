@@ -118,7 +118,21 @@ seven.addEventListener("click", function(){
         ansInput.push("7") ; 
         display(parseFloat(ansInput.join(""))) ;
     } else {
-        num.push("8") ;
+        num.push("7") ;
+        display(parseFloat(num.join(""))) ;
+    }
+});
+
+const six = document.querySelector(".six") ;
+six.addEventListener("click", function(){
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if (operator === "") {
+        ansInput.push("6") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else {
+        num.push("6") ;
         display(parseFloat(num.join(""))) ;
     }
 });
