@@ -4,11 +4,21 @@ let operator = "" ;
 let num = [] ;
 let calc = "over" ;
 
+const plusBtn = document.querySelector(".plus") ;
+const minusBtn = document.querySelector(".minus") ;
+const multiplyBtn = document.querySelector(".multiply") ;
+const divideBtn = document.querySelector(".divide") ;
+const operatorArr = [plusBtn, minusBtn, multiplyBtn, divideBtn] ;
+
 const screen = document.querySelector(".screen")
 function display (a) {
-    screen.textContent = (
-        new Intl.NumberFormat("en-EN").format(a)
-    ) ;
+    if (a === ans) {
+        screen.textContent = (
+            new Intl.NumberFormat("en-EN", { maximumSignificantDigits: 12 , maximumFractionDigits: 10 }).format(a)
+    ) ;} else {
+        screen.textContent = (
+            new Intl.NumberFormat("en-EN", {maximumFractionDigits: 20 }).format(a)
+    )};
 };
 
 function reset() {
@@ -18,6 +28,9 @@ function reset() {
     num = [] ;
     calc = "over" ;
     display(ans) ;
+    operatorArr.map((btn) => (
+        btn.style.cssText = "background-color : rgb(255, 255, 255) ; color : rgb(76, 89, 209)"
+    )) ;
 };
 
 reset () ;
@@ -62,9 +75,13 @@ function divide (a, b) {
 function operate () {
     num = parseFloat(num.join("")) ;
     if ((num === NaN) || (operator === "")) {
-        ans = ans ;
+        if (ansInput.length >= 3) {
+            ans = parseFloat(ansInput.join(""))
+        } ;
     } else {
-        ans = parseFloat(ansInput.join("")) ;
+        if (ansInput.length >= 3) {
+            ans = parseFloat(ansInput.join(""))
+        } ;
         if (operator = "plus") {
             ans = add(ans, num);
         } else if (operator = "minus") {
@@ -80,6 +97,9 @@ function operate () {
     operator = "" ;
     ansInput = [0, 0] ;
     calc = "over" ;
+    operatorArr.map((btn) => (
+        btn.style.cssText = "background-color : rgb(255, 255, 255) ; color : rgb(76, 89, 209)"
+    )) ;
     return (ans) ;
 };
 
@@ -233,12 +253,24 @@ function inputZero () {
 const zero = document.querySelector(".zero") ;
 zero.addEventListener("click", inputZero);
 
-const plusBtn = document.querySelector("plus") ;
-const minusBtn = document.querySelector("minus") ;
-const multiplyBtn = document.querySelector("multiply") ;
-const divideBtn = document.querySelector("divide") ;
-const operatorArr = [plusBtn, minusBtn, multiplyBtn, divideBtn] ;
+function inputDecimalSeparator () {
+    if (calc = "over") {
+        calc = "ongoing" ;
+    };
+    if ((operator === "") && (ansInput.includes(".") === false)) {
+        ansInput.push(".") ; 
+        display(parseFloat(ansInput.join(""))) ;
+    } else if ((operator !== "") && (num.includes(".") === false)) {
+        num.push(".") ;
+        display(parseFloat(num.join(""))) ;
+    }
+};
+const decimalSeparator = document.querySelector(".decimalSeparator") ;
+decimalSeparator.addEventListener("click", inputDecimalSeparator);
 
-//function pressedBtn to make a Btn appear pressed
+function pressedBtn () {
+    EventTarget.style.cssText = "background : rgb(76, 89, 209) ; color : rgb(255, 255, 255)"
+};
 
-//function unpressedBtn to make a Btn appear unpressed
+const equalBtn = document.querySelector(".equalBtn") ;
+equalBtn.addEventListener("click", operate);
