@@ -33,6 +33,9 @@ function reset() {
     )) ;
 };
 
+const acBtn = document.querySelector(".clearBtn") ;
+acBtn.addEventListener("click", reset) ;
+
 reset () ;
 
 function add (a, b) {
@@ -274,3 +277,8 @@ function pressedBtn () {
 
 const equalBtn = document.querySelector(".equalBtn") ;
 equalBtn.addEventListener("click", operate);
+
+/* function for each operator
+function to del three cases: ansInput, operator, num
+function for ANS button
+*/
