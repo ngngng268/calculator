@@ -67,10 +67,9 @@ function multiply (a, b) {
 };
 
 function divide (a, b) {
-    if (b === 0) {
+    if (parseFloat(b) === 0) {
         return ("No dividing by 0.")
-    }
-    else { 
+    } else { 
         if (b.length === 0) {
             b = 1
         };
