@@ -12,7 +12,9 @@ const operatorArr = [plusBtn, minusBtn, multiplyBtn, divideBtn] ;
 
 const screen = document.querySelector(".screen")
 function display (a) {
-    if (a === ans) {
+    if (Number.isFinite(a) === false) {
+        screen.textContent = (a)
+    } else if (a === ans) {
         screen.textContent = (
             new Intl.NumberFormat("en-EN", { maximumSignificantDigits: 12 , maximumFractionDigits: 10 }).format(a)
         ) ;
@@ -20,9 +22,7 @@ function display (a) {
         screen.textContent = (
             new Intl.NumberFormat("en-EN", {maximumFractionDigits: 20 }).format(a)
         )
-    } else if (Number.isFinite(a) === false) {
-        screen.textContent = (a)
-    };
+    } ;
 };
 
 function reset() {
@@ -68,7 +68,7 @@ function multiply (a, b) {
 
 function divide (a, b) {
     if (b === 0) {
-        return ("You cannot divide by 0.")
+        return ("No dividing by 0.")
     }
     else { 
         if (b === NaN) {
@@ -81,7 +81,7 @@ function divide (a, b) {
 
 function operate () {
     num = parseFloat(num.join("")) ;
-    if ((num === NaN) || (operator === "")) {
+    if ((num.length === 0) || (operator === "")) {
         if (ansInput.length >= 3) {
             ans = parseFloat(ansInput.join(""))
         } ;
@@ -330,6 +330,6 @@ function backspace () {
 const backSpaceBtn = document.querySelector(".backSpaceBtn") ;
 backSpaceBtn.addEventListener("click", backspace) ;
 
-/* function to alert when try to divide by 0 (fix display())
+/* 
 function for ANS button
 */
