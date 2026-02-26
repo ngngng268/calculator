@@ -43,26 +43,26 @@ acBtn.addEventListener("click", reset) ;
 reset () ;
 
 function add (a, b) {
-    if (b === NaN) {
+    if (b.length === 0) {
         b = 0 ;
     };
-    ans = a + b ;
+    ans = a + parseFloat(b) ;
     return (ans) ;
 };
 
 function subtract (a, b) {
-    if (b === NaN) {
+    if (b.length === 0) {
         b = 0
     };
-    ans = a - b ;
+    ans = a - parseFloat(b) ;
     return (ans) ;
 };
 
 function multiply (a, b) {
-    if (b === NaN) {
+    if (b.length === 0) {
         b = 1
     };
-    ans = a * b ;
+    ans = a * parseFloat(b) ;
     return (ans) ;
 };
 
@@ -71,33 +71,27 @@ function divide (a, b) {
         return ("No dividing by 0.")
     }
     else { 
-        if (b === NaN) {
+        if (b.length === 0) {
             b = 1
         };
-        ans = a / b ;
+        ans = a / parseFloat(b) ;
         return (ans) ;
     };
 };
 
 function operate () {
-    num = parseFloat(num.join("")) ;
-    if ((num.length === 0) || (operator === "")) {
-        if (ansInput.length >= 3) {
-            ans = parseFloat(ansInput.join(""))
-        } ;
-    } else {
-        if (ansInput.length >= 3) {
-            ans = parseFloat(ansInput.join(""))
-        } ;
-        if (operator === "plus") {
-            ans = add(ans, num);
-        } else if (operator === "minus") {
-            ans = subtract(ans, num);
-        } else if (operator === "multiply") {
-            ans = multiply(ans, num);
-        } else if (operator === "divide") {
-            ans = divide(ans, num);
-        } ;
+    num = num.join("") ;
+    if (ansInput.length >= 3) {
+        ans = parseFloat(ansInput.join(""))
+    } ;
+    if (operator === "plus") {
+        ans = add(ans, num);
+    } else if (operator === "minus") {
+        ans = subtract(ans, num);
+    } else if (operator === "multiply") {
+        ans = multiply(ans, num);
+    } else if (operator === "divide") {
+        ans = divide(ans, num);
     } ;
     display (ans) ;
     num = [] ;
@@ -120,7 +114,7 @@ function inputNine () {
     } else {
         num.push("9") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const nine = document.querySelector(".nine") ;
 nine.addEventListener("click", inputNine);
@@ -135,7 +129,7 @@ function inputEight () {
     } else {
         num.push("8") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const eight = document.querySelector(".eight") ;
 eight.addEventListener("click", inputEight);
@@ -150,7 +144,7 @@ function inputSeven () {
     } else {
         num.push("7") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const seven = document.querySelector(".seven") ;
 seven.addEventListener("click", inputSeven);
@@ -165,7 +159,7 @@ function inputSix () {
     } else {
         num.push("6") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const six = document.querySelector(".six") ;
 six.addEventListener("click", inputSix);
@@ -180,7 +174,7 @@ function inputFive () {
     } else {
         num.push("5") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const five = document.querySelector(".five") ;
 five.addEventListener("click", inputFive);
@@ -195,7 +189,7 @@ function inputFour () {
     } else {
         num.push("4") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const four = document.querySelector(".four") ;
 four.addEventListener("click", inputFour);
@@ -210,7 +204,7 @@ function inputThree () {
     } else {
         num.push("3") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const three = document.querySelector(".three") ;
 three.addEventListener("click", inputThree);
@@ -225,7 +219,7 @@ function inputTwo () {
     } else {
         num.push("2") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const two = document.querySelector(".two") ;
 two.addEventListener("click", inputTwo);
@@ -240,7 +234,7 @@ function inputOne () {
     } else {
         num.push("1") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const one = document.querySelector(".one") ;
 one.addEventListener("click", inputOne);
@@ -255,7 +249,7 @@ function inputZero () {
     } else {
         num.push("0") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const zero = document.querySelector(".zero") ;
 zero.addEventListener("click", inputZero);
@@ -270,7 +264,7 @@ function inputDecimalSeparator () {
     } else if ((operator !== "") && (num.includes(".") === false)) {
         num.push(".") ;
         display(parseFloat(num.join(""))) ;
-    }
+    } ;
 };
 const decimalSeparator = document.querySelector(".decimalSeparator") ;
 decimalSeparator.addEventListener("click", inputDecimalSeparator);
@@ -283,25 +277,25 @@ const equalBtn = document.querySelector(".equalBtn") ;
 equalBtn.addEventListener("click", operate);
 
 plusBtn.addEventListener("click", function(){
-    operate() ;
+    ans = operate() ;
     operator = "plus" ;
     pressedBtn(plusBtn) ;
 }) ;
 
 minusBtn.addEventListener("click", function(){
-    operate() ;
+    ans = operate() ;
     operator = "minus" ;
     pressedBtn(minusBtn) ;
 }) ;
 
 multiplyBtn.addEventListener("click", function(){
-    operate() ;
+    ans = operate() ;
     operator = "multiply" ;
     pressedBtn(multiplyBtn) ;
 }) ;
 
 divideBtn.addEventListener("click", function(){
-    operate() ;
+    ans = operate() ;
     operator = "divide" ;
     pressedBtn(divideBtn) ;
 }) ;
@@ -332,4 +326,6 @@ backSpaceBtn.addEventListener("click", backspace) ;
 
 /* 
 function for ANS button
+add function for keyboard input
+
 */
