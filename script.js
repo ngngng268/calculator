@@ -15,10 +15,14 @@ function display (a) {
     if (a === ans) {
         screen.textContent = (
             new Intl.NumberFormat("en-EN", { maximumSignificantDigits: 12 , maximumFractionDigits: 10 }).format(a)
-    ) ;} else {
+        ) ;
+    } else if (Number.isFinite(a) === true) {
         screen.textContent = (
             new Intl.NumberFormat("en-EN", {maximumFractionDigits: 20 }).format(a)
-    )};
+        )
+    } else if (Number.isFinite(a) === false) {
+        screen.textContent = (a)
+    };
 };
 
 function reset() {
@@ -302,9 +306,30 @@ divideBtn.addEventListener("click", function(){
     pressedBtn(divideBtn) ;
 }) ;
 
+function backspace () {
+    if ((operator === "") && (ansInput.length === 2) && (num.length === 0)) {
+        reset() ;
+    } else if ((operator === "") && (ansInput.length >= 3)) {
+        ansInput.pop() ;
+        display(parseFloat(ansInput.join(""))) ;
+    } else if ((operator !== "") && (num.length === 0)) {
+        operator = "" ;
+        operatorArr.map((btn) => (
+            btn.style.cssText = "background-color : rgb(255, 255, 255) ; color : rgb(76, 89, 209)"
+        )) ;
+        display(ans) ;
+    } else if (num.length !== 0) {
+        num.pop() ;
+        if (num.length !== 0) {
+            display(parseFloat(num.join(""))) ;
+        } else {
+            display("awaiting input") ;
+        }
+    };
+} ;
+const backSpaceBtn = document.querySelector(".backSpaceBtn") ;
+backSpaceBtn.addEventListener("click", backspace) ;
 
-
-/* function for each operator
-function to del three cases: ansInput, operator, num
+/* function to alert when try to divide by 0 (fix display())
 function for ANS button
 */
