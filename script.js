@@ -85,13 +85,13 @@ function operate () {
         if (ansInput.length >= 3) {
             ans = parseFloat(ansInput.join(""))
         } ;
-        if (operator = "plus") {
+        if (operator === "plus") {
             ans = add(ans, num);
-        } else if (operator = "minus") {
+        } else if (operator === "minus") {
             ans = subtract(ans, num);
-        } else if (operator = "multiply") {
+        } else if (operator === "multiply") {
             ans = multiply(ans, num);
-        } else if (operator = "divide") {
+        } else if (operator === "divide") {
             ans = divide(ans, num);
         } ;
     } ;
@@ -271,12 +271,38 @@ function inputDecimalSeparator () {
 const decimalSeparator = document.querySelector(".decimalSeparator") ;
 decimalSeparator.addEventListener("click", inputDecimalSeparator);
 
-function pressedBtn () {
+function pressedBtn (EventTarget) {
     EventTarget.style.cssText = "background : rgb(76, 89, 209) ; color : rgb(255, 255, 255)"
 };
 
 const equalBtn = document.querySelector(".equalBtn") ;
 equalBtn.addEventListener("click", operate);
+
+plusBtn.addEventListener("click", function(){
+    operate() ;
+    operator = "plus" ;
+    pressedBtn(plusBtn) ;
+}) ;
+
+minusBtn.addEventListener("click", function(){
+    operate() ;
+    operator = "minus" ;
+    pressedBtn(minusBtn) ;
+}) ;
+
+multiplyBtn.addEventListener("click", function(){
+    operate() ;
+    operator = "multiply" ;
+    pressedBtn(multiplyBtn) ;
+}) ;
+
+divideBtn.addEventListener("click", function(){
+    operate() ;
+    operator = "divide" ;
+    pressedBtn(divideBtn) ;
+}) ;
+
+
 
 /* function for each operator
 function to del three cases: ansInput, operator, num
