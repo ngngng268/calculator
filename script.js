@@ -350,8 +350,86 @@ roundBtn.addEventListener("click", function () {
     }
 });
 
-/* 
+window.addEventListener(
+  "keydown",
+  (event) => {
+    if (event.defaultPrevented) {
+      return; // Do nothing if the event was already processed
+    }
 
-add function for keyboard input
+    switch (event.key) {
+        case "+":
+            ans = operate() ;
+            operator = "plus" ;
+            calc = "ongoing" ;
+            pressedBtn(plusBtn) ;
+        break;
+        case "-":
+            ans = operate() ;
+            operator = "minus" ;
+            calc = "ongoing" ;
+            pressedBtn(minusBtn) ;
+        break;
+        case "*":
+            ans = operate() ;
+            operator = "multiply" ;
+            calc = "ongoing" ;
+            pressedBtn(multiplyBtn) ;
+        break;
+        case "/":
+            ans = operate() ;
+            operator = "divide" ;
+            calc = "ongoing" ;
+            pressedBtn(divideBtn) ;
+        break;
+        case "Backspace":
+            backspace() ;
+        break;
+        case ".":
+            inputDecimalSeparator() ;
+        break;
+        case "=":
+            operate() ;
+        break;
+        case "Enter":
+            operate() ;
+        break;
+        case "0":
+            inputZero() ;
+        break;
+        case "1":
+            inputOne() ;
+        break;
+        case "2" :
+            inputTwo() ;
+        break ;
+        case "3":
+            inputThree() ;
+        break;
+        case "4":
+            inputFour() ;
+        break;
+        case "5":
+            inputFive() ;
+        break;
+        case "6" :
+            inputSix() ;
+        break ;
+        case "7":
+            inputSeven() ;
+        break;
+        case "8" :
+            inputEight() ;
+        break ;
+        case "9":
+            inputNine() ;
+        break;
+        default:
+            return; // Quit when this doesn't handle the key event.
+    }
 
-*/
+    // Cancel the default action to avoid it being handled twice
+    event.preventDefault();
+  },
+  true,
+);
