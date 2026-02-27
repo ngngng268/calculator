@@ -278,24 +278,28 @@ equalBtn.addEventListener("click", operate);
 plusBtn.addEventListener("click", function(){
     ans = operate() ;
     operator = "plus" ;
+    calc = "ongoing" ;
     pressedBtn(plusBtn) ;
 }) ;
 
 minusBtn.addEventListener("click", function(){
     ans = operate() ;
     operator = "minus" ;
+    calc = "ongoing" ;
     pressedBtn(minusBtn) ;
 }) ;
 
 multiplyBtn.addEventListener("click", function(){
     ans = operate() ;
     operator = "multiply" ;
+    calc = "ongoing" ;
     pressedBtn(multiplyBtn) ;
 }) ;
 
 divideBtn.addEventListener("click", function(){
     ans = operate() ;
     operator = "divide" ;
+    calc = "ongoing" ;
     pressedBtn(divideBtn) ;
 }) ;
 
@@ -323,8 +327,31 @@ function backspace () {
 const backSpaceBtn = document.querySelector(".backSpaceBtn") ;
 backSpaceBtn.addEventListener("click", backspace) ;
 
+const randomBtn = document.querySelector(".randomBtn") ;
+randomBtn.addEventListener("click", function  () {
+    if (calc === "over") {
+        ans = Math.random() ;
+        display(ans) ;
+    } else if ((operator !== "") && (num.length === 0)) {
+        num.push(Math.random()) ;
+        ans = operate () ;
+    }
+}) ;
+
+const roundBtn = document.querySelector(".roundBtn") ;
+roundBtn.addEventListener("click", function () {
+    if (calc === "over") {
+        ans = Math.round(ans) ;
+        display (ans) ;
+    } else if ((ansInput.length >= 3)&&(operator === "")) {
+        ans = Math.round(parseFloat(ansInput.join(""))) ;
+        display(ans) ;
+        ansInput = [0, 0] ;
+    }
+});
+
 /* 
-function for ANS button
+
 add function for keyboard input
 
 */
